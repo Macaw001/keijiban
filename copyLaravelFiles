@@ -1,0 +1,7 @@
+#!/bin/sh
+# rsync コマンドを使用してファイルを同期します
+rsync -avz -e "ssh -i ~/.ssh/ubu-server" --exclude=".env" --exclude=".env.example" --exclude="config/database.php" ubu-server@192.168.10.102:~/keijiban/keijiban/ ./
+
+# コピー完了後にメッセージを表示
+echo "コピーが完了しました
+
