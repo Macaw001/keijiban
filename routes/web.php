@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +42,9 @@ Route::get('comment/edit', [CommentController::class, 'edit']);
 Route::post('comment/edit', [CommentController::class, 'update']);
 Route::delete('comment/edit', [CommentController::class, 'destroy']);
 
+//Likeコントローラへの記述
+Route::post('like', [LikeController::class, 'store']);
+Route::delete('like', [LikeController::class, 'destroy']);
 
 
 

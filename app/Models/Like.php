@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Like extends Model
 {
     use HasFactory;
+	
+	protected $guarded = array('id');
+
+	    public static $rules = array(
+		'post_id' => 'required',
+		'user_id' => 'required',
+	);
+
+
+
 }

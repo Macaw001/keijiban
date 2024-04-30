@@ -8,6 +8,7 @@
 
 @section('content')
 
+	<div class="container">
 	@if (count($errors) > 0)
 	<div>
 		<ul>
@@ -18,15 +19,16 @@
 	</div>
 	@endif
 
-	<form action="/comment/create" method="post">
+	 <form class="form-control" action="/comment/create" method="post">
 	<table>
 		@csrf
-		<tr><th>コメント</th><td><textarea name="comment"></textarea></td></tr>
+		<tr><th>コメント</th><td><textarea name="comment" style="width:500px; height: 300px;"></textarea></td></tr>
 		<input type="hidden" name="user_id" value="{{$user->id}}">
 		<input type="hidden" name="post_id" value="{{$post}}">
-		<tr><td><button type="submit">投稿する</button></td></tr>
-		<tr><td>user_id:{{ $user->id }}</td></tr>
-		<tr><td>post_id:{{ $post}}</td></tr>
-	</table>
+		</table>
+		<div class="d-flex justify-content-center">
+		<button type="submit">投稿する</button>
+		</div>
 	</form>
+	</div>
 @endsection

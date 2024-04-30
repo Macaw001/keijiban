@@ -5,6 +5,7 @@
 
 
 <?php $__env->startSection('content'); ?>
+	<div class="container">
 	<!-- flash message -->
 	<?php if(session('flash_message')): ?>
 		<div class="flash_message">
@@ -26,7 +27,7 @@
 	<?php endif; ?>	
 	
 	
-	<form action="./edit?id=<?php echo e($comment->id); ?>" method="post">
+	<form class="form-control" action="./edit?id=<?php echo e($comment->id); ?>" method="post">
 	<?php echo csrf_field(); ?>
 	<table>
 		<tr><td><textarea name="comment"><?php echo e($comment->comment); ?><?php echo e(old('comment')); ?></textarea></td></tr>		
@@ -34,7 +35,7 @@
 		<input type="hidden" name="user_id"  value="<?php echo e($user->id); ?>"> <tr><td><button type="submit">更新する</button></td></tr>		
 	</form>
 	</div>
-	<a href="edit/create">投稿をする</a>
+	</div>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.postapp', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/ubu-server/keijiban/keijiban/resources/views/comment/edit.blade.php ENDPATH**/ ?>

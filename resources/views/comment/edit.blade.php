@@ -5,6 +5,7 @@
 @extends('layouts.postapp')
 
 @section('content')
+	<div class="container">
 	<!-- flash message -->
 	@if (session('flash_message'))
 		<div class="flash_message">
@@ -25,7 +26,7 @@
 	@endif	
 	
 	
-	<form action="./edit?id={{$comment->id}}" method="post">
+	<form class="form-control" action="./edit?id={{$comment->id}}" method="post">
 	@csrf
 	<table>
 		<tr><td><textarea name="comment">{{$comment->comment}}{{old('comment')}}</textarea></td></tr>		
@@ -33,5 +34,5 @@
 		<input type="hidden" name="user_id"  value="{{$user->id}}"> <tr><td><button type="submit">更新する</button></td></tr>		
 	</form>
 	</div>
-	<a href="edit/create">投稿をする</a>
+	</div>
 @endsection
